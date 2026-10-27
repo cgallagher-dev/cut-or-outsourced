@@ -17,9 +17,23 @@ once emissions embodied in imports are counted.
 - Final output: a static A4 visual report of 4-5 figures, also used as presentation slides.
   We chose static over a dashboard because Ireland's year-to-year figures are volatile and
   free exploration of single years could mislead.
-- Course brief and submission requirements are in `Project Instructions-*/` (not in the
-  repo; it's in the shared OneDrive). Read the relevant section before starting any
-  deliverable.
+
+## Project instructions
+
+The course brief is not in the repo (it's the lecturer's material, so it stays out via
+`.gitignore`). Before starting any deliverable:
+
+1. Look for a folder whose name starts with `Project Instructions` in the repo root. It
+   should contain:
+   - Document 1 - Group Data Visualization Project Brief.docx
+   - Document 2 - Integrating AI into the Data Visualization Project.docx
+   - Document 3 - Required Project Submissions.docx
+   - What AI Can Do.pdf
+2. If it's there, read the section for the deliverable you're working on (Document 3 lists
+   what each submission must contain and its suggested length).
+3. If it's missing, stop and ask the person you're helping to download the project
+   instructions from Moodle and save them in a `Project Instructions/` folder in the repo
+   root. Don't guess the requirements from memory.
 
 ## Who owns what
 
