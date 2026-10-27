@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.DS_Store
+~$*.docx
+
+# Course materials aren't ours to publish
+Project Instructions-*/
+
+# AI Decision Log is kept private until final submission
+deliverables/*AI Decision Log*
+
+# Too large for GitHub (243 MB); download link in README
+data/raw/eurostat_env_ac_ghgfp.json
