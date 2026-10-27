@@ -1,17 +1,23 @@
 # AGENTS.md
 
-Instructions for AI coding assistants (Copilot, Claude, ChatGPT, etc.) working in this repo.
-Read this before doing anything. It applies to all three of us: Charlie Gallagher,
-Lucy O'Connor and Seán Bardon.
+How we work on this project. It's written for the AI assistants each of us uses (Copilot,
+Claude, ChatGPT, etc.) so they follow the same process Charlie's has so far. Lucy and Seán:
+point your assistant at this file, or paste it in, before starting work.
 
 ## The project
 
-"Cut or Outsourced? What Europe's Emissions Success Means for Ireland". A group data
-visualisation project comparing territorial and consumption-based greenhouse gas emissions
-for Ireland and six peers (UK, Denmark, Germany, France, Sweden, Netherlands).
+"Cut or Outsourced? What Europe's Emissions Success Means for Ireland". We compare
+territorial and consumption-based greenhouse gas emissions for Ireland and six peers (UK,
+Denmark, Germany, France, Sweden, Netherlands), to see whether the usual comparisons change
+once emissions embodied in imports are counted.
 
-Audience: Oireachtas committee and Climate Change Advisory Council staff who write briefings.
-Final output: a static A4 visual report of 4-5 figures, also used as presentation slides.
+- Audience: Oireachtas committee and Climate Change Advisory Council staff who write
+  briefings. Policy-literate, not statisticians, about 5-10 minutes per read.
+- Final output: a static A4 visual report of 4-5 figures, also used as presentation slides.
+  We chose static over a dashboard because Ireland's year-to-year figures are volatile and
+  free exploration of single years could mislead.
+- Course brief and submission requirements are in `Project Instructions-*/` (not in the
+  repo; ask Charlie). Read the relevant section before starting any deliverable.
 
 ## Who owns what
 
@@ -22,61 +28,134 @@ Final output: a static A4 visual report of 4-5 figures, also used as presentatio
 | Seán | @Seanwbardon | Messages, narrative, presentation, AI Decision Log | Data |
 
 - Only work on issues assigned to the person you are helping. If a task belongs to someone
-  else's issue, stop and say so rather than doing it.
+  else's issue, stop and say so.
 - Everyone must understand the whole project. Any of us can be asked about any decision in
-  the oral defence, so explain your reasoning rather than just producing output.
+  the oral defence, so explain reasoning, not just output.
+- Commits only go in under the name of the person who did the work.
 
-## How we work
+## Schedule
 
-- Every piece of work has a GitHub issue with an owner, a reviewer and a due date.
-- Work on a branch, open a pull request that says `Closes #N`, and ask the reviewer on the
-  issue to review it. `main` needs one approving review.
-- Do not commit, push, merge or open pull requests unless the person you are helping asks.
-- Drafts are reviewed at our Wednesday meeting and finished by that Friday.
+No fixed submission dates, so we follow the suggested timeline in the brief (week of 28
+September = Week 3). Drafts are reviewed at our Wednesday meeting and finished that Friday.
+Due dates are on each GitHub issue.
+
+| Week | Deliverable | Draft (Wed) | Done (Fri) |
+|---|---|---|---|
+| 7 | Team Charter; Audience Brief and Data Audit | 28 Oct | 30 Oct |
+| 7-8 | Message statement and design cards | 4 Nov | 6 Nov |
+| 9 | Draft visual story | 11 Nov | 13 Nov |
+| 10 | Final visualisation package | 18 Nov | 20 Nov |
+| 11 | Presentation (rehearsal Mon 23 Nov), AI log and reflections | 25 Nov | 27 Nov |
+
+## Git and GitHub
+
+- Repo: https://github.com/cgallagher-dev/cut-or-outsourced (public).
+- Every piece of work has an issue with an owner, a reviewer and a due date. Labels:
+  `submission-1` to `submission-7`, plus `data`, `visualisation`, `story`, `review`.
+- One branch per issue, named after the task (e.g. `investment-spike`). Branch from `main`.
+- Open a pull request that says `Closes #N` and requests the issue's reviewer. `main` needs
+  one approving review.
+- PR description: purpose first, then "What it shows", "What I think this means for us" and
+  "Worth checking in review". Include the key numbers so the reviewer can check them. See
+  PR #17 for an example.
+- Commit with your GitHub no-reply email, not a work or college address
+  (`git config user.email <id>+<username>@users.noreply.github.com`).
+- Don't commit, push, merge or open PRs unless the person you're helping asks. Ask before
+  anything public or hard to undo.
+- Not in the repo (`.gitignore`): course instructions, the AI Decision Log (until the end),
+  the 243 MB FIGARO file, `.venv/`.
 - Agreed changes to questions, data or design go in one line in the Discord #decisions
   channel.
 
-## Writing (comments, commit messages, PRs, deliverables)
+## Writing (commits, comments, PRs, deliverables)
 
 Everything public should read like one of us wrote it.
 
 - Plain and short. Say what changed and why, then stop.
 - Irish/UK spelling (visualisation, colour, analyse).
 - No em dashes, no emoji, no filler ("delve", "leverage", "robust", "seamless",
-  "comprehensive", "it's worth noting"). Don't scatter bold headings everywhere.
-- Commit subject: short, imperative, capitalised, no full stop ("Add design cards").
+  "comprehensive", "it's worth noting", "not just X but Y"). Don't scatter bold headings.
+- Commit subject: short, imperative, capitalised, no full stop ("Add design cards"). Body
+  only if needed, wrapped at about 72 characters, saying what and why.
 - Code comments only where they explain why, in one short line.
-- Match the style of the existing scripts in `notebooks/`. Keep code simple enough that the
-  owner can explain every line.
+- Never include a predetermined conclusion. State what the data shows and what we haven't
+  checked.
+
+## Deliverables (Word documents)
+
+- Saved in `deliverables/` as `Cut or Outsourced (<Name>).docx`.
+- Built with python-docx in the same style as the existing ones: `Heading 1` for the
+  document title, a bold "Group members:" line, `Heading 2` for sections, `List Bullet` and
+  `List Number` for lists, tables in `Light Grid Accent 1` at 9pt. Spacing: 6pt before,
+  4pt after.
+- Check the page count in Microsoft Word against the brief (pitch about 1 page, proposal
+  2-3 pages) and trim content rather than shrinking fonts. Decide what to cut; don't just
+  shorten everything evenly.
+- Cite sources with real hyperlinks: inline on the first mention of a dataset, policy or
+  organisation, plus a "Sources" list at the end. Only use URLs you have opened and checked.
+- Before committing, clear python-docx metadata: set the author to the three of us and
+  empty the comments field (python-docx writes "generated by python-docx").
+- Every figure in a deliverable must come from a script run, not from memory or chat.
+
+## Checking facts
+
+This has caught several mistakes already, so keep doing it.
+
+- Re-run the script and read the number from its output before writing it down.
+- Check claims about a dataset against its official metadata page, not memory. Example:
+  the gap between FIGARO and the inventory was only explained after reading Eurostat's
+  metadata and reconciling with the bridging table (`notebooks/data_audit.py`, section 5).
+- If something can't be verified yet, write it as "likely" or "not checked" and add a task
+  for it.
+- Sanity-check totals against a known figure (e.g. Ireland is about 55-62 Mt CO2e). Our
+  first FIGARO total was double because aggregates were included.
+- When breaking a total into parts, check the parts add up to the reported total.
+
+## Code and data
+
+- Plain Python scripts in `notebooks/`, run from the repo root
+  (`python notebooks/<script>.py`). Top-level code that prints its results, no classes or
+  frameworks. Match the existing scripts.
+- Set up with `python -m venv .venv`, `source .venv/bin/activate`,
+  `pip install -r requirements.txt`. Add any new package to `requirements.txt`.
+- Eurostat JSON-stat files are flattened with the `jsonstat_frame` function (copied into
+  each script that needs it, since the scripts aren't importable modules).
+- Raw downloads go in `data/raw/` (Eurostat API:
+  `https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/<code>?...`) and are
+  kept unchanged. Record the download date in the data audit.
+- Prepared data goes in `data/processed/`, written by a script, never edited by hand.
+- Don't remove outliers or impute values without discussing it. Unusual values are flagged,
+  investigated and annotated.
 
 ## Data rules
 
-- Run scripts from the repo root. `notebooks/data_audit.py` writes everything in
-  `data/processed/`.
 - The three sources use different accounting rules. Never add them together or treat one
-  as a correction of another. Compare them side by side and explain the difference.
+  as a correction of another. Compare side by side and explain the difference.
   - Our World in Data: CO2 only, 1990-2023, territorial and consumption-based.
-  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2023, residence principle,
-    excludes households' own emissions.
-  - EPA inventory (`env_air_gge`): all gases, territory principle, the basis of the 51% target.
-- In FIGARO, drop the `EU27_2020`, `EXT_EU27_2020` and `WORLD` aggregates before summing,
-  or totals double.
-- Ireland's 2019-20 footprint spike comes from intellectual property investment (see
-  `notebooks/investment_spike.py`). Keep the values, annotate them, and don't draw trends
-  through those years. Don't state why IP investment surged as fact; we haven't checked.
-- The FIGARO raw file (243 MB) is not in the repo. See the README for how to get it.
-- Check every number before it goes in a deliverable. Re-run the script; don't copy
-  figures from chat.
+  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2023. Production side uses
+    the residence principle (includes Irish airlines flying abroad) and excludes households'
+    own emissions (heating, private cars).
+  - EPA inventory (`env_air_gge`): all gases, territory principle, the basis of the 51%
+    target (vs 2018).
+- In FIGARO, drop the `EU27_2020`, `EXT_EU27_2020` and `WORLD` aggregates before summing.
+  For industries, use the one-letter NACE sections (A-U); other codes overlap.
+- Ireland's 2019-20 footprint spike comes from intellectual property investment
+  (`notebooks/investment_spike.py`). Keep the values, annotate them, don't draw trends
+  through those years, and don't state why IP investment surged as fact.
+- The UK is missing from the Eurostat peer inventory file (it left EU reporting). OWID GDP
+  is missing for 2023.
 
 ## AI use
 
-The project brief allows AI but we must show human judgement.
+The brief allows AI but marks us on human judgement.
 
-- If AI meaningfully changes a decision (topic, data, cleaning, chart, design, story), post
-  a short note in #decisions: what it suggested, what we did, and why. Seán adds it to the
-  AI Decision Log.
-- The AI Decision Log stays out of the repo until the end (it is in `.gitignore`).
-- Don't accept AI chart or analysis suggestions without comparing alternatives. "The AI
-  chose it" is not a reason we can give.
-- Don't make claims the data can't support (causes, motives). Say what we checked and what
-  we didn't.
+- AI suggests, we decide. Compare alternatives before accepting a chart or analysis
+  suggestion. "The AI chose it" is not a reason we can give.
+- Log every case where AI meaningfully affected the project. Post a short note in
+  #decisions and Seán adds it to the AI Decision Log, which has the columns: Date
+  (dd/mm/yyyy), Stage (Topic, Data, Cleaning, Analysis, Chart, Design, Story), AI
+  Contribution, Decision (e.g. Accepted, Accepted with revision, Rejected, Rejected and
+  corrected, Accepted after verification), Explanation.
+- Rejections and corrections are the most valuable entries. Write down exactly what the AI
+  got wrong and how we found out.
+- Don't make claims the data can't support (causes, motives).
