@@ -29,8 +29,18 @@ The course brief is not in the repo (it's the lecturer's material, so it stays o
    - Document 2 - Integrating AI into the Data Visualization Project.docx
    - Document 3 - Required Project Submissions.docx
    - What AI Can Do.pdf
-2. If it's there, read the section for the deliverable you're working on (Document 3 lists
-   what each submission must contain and its suggested length).
+2. If it's there, read the parts that apply to the deliverable you're working on, not just
+   the summary. Use the documents for different things:
+   - Document 3 is the checklist. It lists the required content and suggested length for
+     each of the seven submissions. Every required item should appear in the deliverable,
+     under a heading that makes it easy for the marker to find.
+   - Document 1 explains what good work looks like at each step (e.g. what a data audit
+     should investigate, what to keep for data provenance, what the oral defence covers)
+     and has the suggested timeline. Use it to judge quality, not just completeness.
+   - Document 2 sets the rules for AI use, the AI Decision Log and the final reflection.
+     Check it before any step where AI is doing a lot of the work.
+   Before calling a deliverable done, go back through Document 3 item by item and check
+   each one is covered. Say which items are missing or thin rather than assuming.
 3. If it's missing, stop and ask the person you're helping to download the project
    instructions from Moodle and save them in a `Project Instructions/` folder in the repo
    root. Don't guess the requirements from memory.
