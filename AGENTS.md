@@ -1,8 +1,9 @@
 # AGENTS.md
 
-How we work on this project. It's written for the AI assistants each of us uses (Copilot,
-Claude, ChatGPT, etc.) so they follow the same process Charlie's has so far. Lucy and Seán:
-point your assistant at this file, or paste it in, before starting work.
+The ways of working we've agreed as a group. It's written for the AI assistants each of us
+uses (Copilot, Claude, ChatGPT, etc.) so they all follow the same process. Point your
+assistant at this file, or paste it in, before starting work, and update it when we agree
+something new.
 
 ## The project
 
@@ -17,7 +18,8 @@ once emissions embodied in imports are counted.
   We chose static over a dashboard because Ireland's year-to-year figures are volatile and
   free exploration of single years could mislead.
 - Course brief and submission requirements are in `Project Instructions-*/` (not in the
-  repo; ask Charlie). Read the relevant section before starting any deliverable.
+  repo; it's in the shared OneDrive). Read the relevant section before starting any
+  deliverable.
 
 ## Who owns what
 
