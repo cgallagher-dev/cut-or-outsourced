@@ -89,7 +89,7 @@ Due dates are on each GitHub issue.
 - Don't commit, push, merge or open PRs unless the person you're helping asks. Ask before
   anything public or hard to undo.
 - Not in the repo (`.gitignore`): course instructions, the AI Decision Log (until the end),
-  the 243 MB FIGARO file, `.venv/`.
+  the 307 MB FIGARO file, `.venv/`.
 - Agreed changes to questions, data or design go in one line in the Discord #decisions
   channel.
 
