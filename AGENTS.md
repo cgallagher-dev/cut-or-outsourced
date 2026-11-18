@@ -158,13 +158,19 @@ This has caught several mistakes already, so keep doing it.
 - The three sources use different accounting rules. Never add them together or treat one
   as a correction of another. Compare side by side and explain the difference.
   - Our World in Data: CO2 only, 1990-2023, territorial and consumption-based.
-  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2023. Production side uses
-    the residence principle (includes Irish airlines flying abroad) and excludes households'
-    own emissions (heating, private cars).
+  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2024 (release of 30 Oct
+    2026). Production side uses the residence principle (includes Irish airlines flying
+    abroad) and excludes households' own emissions (heating, private cars).
   - EPA inventory (`env_air_gge`): all gases, territory principle, the basis of the 51%
     target (vs 2018).
 - In FIGARO, drop the `EU27_2020`, `EXT_EU27_2020` and `WORLD` aggregates before summing.
   For industries, use the one-letter NACE sections (A-U); other codes overlap.
+- Use the 30 Oct 2026 FIGARO release. It revised the consumption side: Ireland's 2023
+  balance moved from +2.6% to +6.8%. Ireland's balance is small next to that revision, so
+  don't present its sign as settled.
+- Shipping (H50) and airlines (H51) are counted where the operator is resident. Denmark's
+  FIGARO production is over half shipping, so whenever a FIGARO balance is shown, also
+  show it without H50 and H51 (`balance_excl_transport_pct`).
 - Ireland's 2019-20 footprint spike comes from intellectual property investment
   (`notebooks/investment_spike.py`). Keep the values, annotate them, don't draw trends
   through those years, and don't state why IP investment surged as fact.
