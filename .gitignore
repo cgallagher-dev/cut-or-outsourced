@@ -11,3 +11,6 @@ deliverables/*AI Decision Log*
 
 # Too large for GitHub (307 MB); download link in README
 data/raw/eurostat_env_ac_ghgfp.json
+
+# Personal work guides, shared on Discord
+guides/
