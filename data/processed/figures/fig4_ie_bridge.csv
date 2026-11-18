@@ -1,0 +1,7 @@
+step,label,value_mt,kind,of_which_air_mt,running_total_mt
+1,EPA inventory (inside Ireland),53.752,total,,53.752
+2,Fuel Irish residents bought abroad,19.155,add,16.286,72.907
+3,Fuel non-residents bought in Ireland,0.871,subtract,,72.036
+4,All Irish residents,72.036,total,,72.036
+5,Households' own emissions,11.191,subtract,,60.845
+6,FIGARO production (industries),60.844,total,,60.844

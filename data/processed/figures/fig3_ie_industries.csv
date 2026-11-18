@@ -1,0 +1,6 @@
+industry_code,industry_label,produced_mt,consumed_in_ireland_mt,consumed_abroad_mt,share_abroad_pct
+A01,Farming,20.425,6.561,13.864,67.881
+H51,Airlines,16.324,0.726,15.598,95.553
+C,Manufacturing,6.724,2.061,4.663,69.353
+H50,Shipping,2.708,0.024,2.684,99.104
+OTHER,All other industries,14.663,8.84,5.823,39.712
