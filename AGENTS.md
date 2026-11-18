@@ -32,8 +32,8 @@ The course brief is not in the repo (it's the lecturer's material, so it stays o
 2. If it's there, read the parts that apply to the deliverable you're working on, not just
    the summary. Use the documents for different things:
    - Document 3 is the checklist. It lists the required content and suggested length for
-     each of the seven submissions. Every required item should appear in the deliverable,
-     under a heading that makes it easy for the marker to find.
+     each of the ten submissions and the oral defence. Every required item should appear
+     in the deliverable, under a heading that makes it easy for the marker to find.
    - Document 1 explains what good work looks like at each step (e.g. what a data audit
      should investigate, what to keep for data provenance, what the oral defence covers)
      and has the suggested timeline. Use it to judge quality, not just completeness.
