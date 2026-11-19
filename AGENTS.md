@@ -169,8 +169,9 @@ This has caught several mistakes already, so keep doing it.
   balance moved from +2.6% to +6.8%. Ireland's balance is small next to that revision, so
   don't present its sign as settled.
 - Shipping (H50) and airlines (H51) are counted where the operator is resident. Denmark's
-  FIGARO production is over half shipping, so whenever a FIGARO balance is shown, also
-  show it without H50 and H51 (`balance_excl_transport_pct`).
+  FIGARO production is 61% shipping and airlines (49.1 of 80.4 Mt in 2024), so whenever a
+  FIGARO balance is shown, also show it without H50 and H51
+  (`balance_excl_transport_pct`).
 - Ireland's 2019-20 footprint spike comes from intellectual property investment
   (`notebooks/investment_spike.py`). Keep the values, annotate them, don't draw trends
   through those years, and don't state why IP investment surged as fact.
