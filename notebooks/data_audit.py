@@ -109,6 +109,34 @@ ind["share_abroad_pct"] = ind["consumed_abroad_mt"] / ind["produced_mt"] * 100
 ind.round(3).to_csv(OUT / "figaro_ie_industry_exports.csv", index=False)
 print("Ireland industry extract rows:", len(ind))
 
+print("\n== 2b. Consumption footprint per person, by final use (FIGARO and OWID population)")
+use = jsonstat_frame(RAW / "eurostat_env_ac_ghgfp.json",
+                     {"nace_r2": {"TOTAL"}, "c_dest": set(PEERS)})
+use = use[~use["c_orig"].isin(AGGREGATES)]
+use["year"] = use["time"].astype(int)
+use = use.pivot_table(index=["c_dest", "year"], columns="na_item", values="value",
+                      aggfunc="sum") / 1000
+parts = ["P31_S14", "P31_S15", "P3_S13", "P51G", "P52_P53"]
+# The final-use items should add up to the reported total, or a category is missing
+assert (use[parts].sum(axis=1) - use["TOTAL"]).abs().max() < 0.01
+pop = owid_p.assign(country=owid_p["country"].map(dict(zip(PEERS_OWID, PEERS))))
+pop = pop.set_index(["country", "year"])["population"]
+pp = pd.DataFrame({
+    "households_gov_mt": use[["P31_S14", "P31_S15", "P3_S13"]].sum(axis=1),
+    "investment_mt": use["P51G"],
+    "inventories_mt": use["P52_P53"],
+    "total_mt": use["TOTAL"],
+}).rename_axis(["country", "year"]).join(pop, how="inner")
+for c in ["households_gov", "investment", "inventories", "total"]:
+    pp[f"{c}_t_per_person"] = pp[f"{c}_mt"] * 1e6 / pp["population"]
+pp = pp.reset_index()
+print("Total footprint per person, t CO2e (years with OWID population):")
+print(pp.pivot(index="year", columns="country", values="total_t_per_person").round(1).to_string())
+print("2023 split, t CO2e per person:")
+print(pp[pp["year"] == 2023].set_index("country")[
+    ["households_gov_t_per_person", "investment_t_per_person", "total_t_per_person"]].round(1).to_string())
+pp.round(3).to_csv(OUT / "figaro_footprint_per_person.csv", index=False)
+
 print("\n== 3. Official inventory (env_air_gge, Ireland)")
 inv = jsonstat_frame(RAW / "eurostat_env_air_gge_IE.json",
                      {"unit": {"MIO_T"}, "airpol": {"GHG"},
