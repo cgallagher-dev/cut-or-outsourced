@@ -63,8 +63,8 @@ owid_p.to_csv(OUT / "owid_peers.csv", index=False)
 
 print("\n== 2. Eurostat FIGARO footprints (env_ac_ghgfp)")
 fig = jsonstat_frame(RAW / "eurostat_env_ac_ghgfp.json",
-                     {"na_item": {"TOTAL"}, "nace_r2": {"TOTAL", "A01", "H51", "C"}})
-print("Rows kept (final use TOTAL, 4 industries):", len(fig))
+                     {"na_item": {"TOTAL"}, "nace_r2": {"TOTAL", "A01", "H50", "H51", "C"}})
+print("Rows kept (final use TOTAL, 5 industries):", len(fig))
 print("Flags present:", fig["flag"].unique().tolist())
 print("Negative values:", (fig["value"] < 0).sum())
 fig = fig[~fig["c_orig"].isin(AGGREGATES) & ~fig["c_dest"].isin(AGGREGATES)]
@@ -79,7 +79,25 @@ bal = pd.concat([prod, cons], axis=1).rename_axis(["country", "year"]).reset_ind
 bal = bal[bal["country"].isin(PEERS)]
 bal["balance_mt"] = bal["consumption_mt"] - bal["production_mt"]
 bal["balance_pct_of_production"] = bal["balance_mt"] / bal["production_mt"] * 100
+
+# Shipping (H50) and airlines (H51) are counted where the operator is resident, wherever they
+# burn the fuel, so show the balance with them taken out of both sides as well
+trn = fig[fig["nace_r2"].isin(["H50", "H51"])]
+trn = pd.concat([trn.groupby(["c_orig", "year"])["mt"].sum().rename("transport_production_mt"),
+                 trn.groupby(["c_dest", "year"])["mt"].sum().rename("transport_consumption_mt")],
+                axis=1).rename_axis(["country", "year"]).reset_index()
+bal = bal.merge(trn, on=["country", "year"], how="left")
+bal["production_excl_transport_mt"] = bal["production_mt"] - bal["transport_production_mt"]
+bal["consumption_excl_transport_mt"] = bal["consumption_mt"] - bal["transport_consumption_mt"]
+bal["balance_excl_transport_pct"] = ((bal["consumption_excl_transport_mt"]
+                                      - bal["production_excl_transport_mt"])
+                                     / bal["production_excl_transport_mt"] * 100)
+bal = bal.drop(columns=["transport_production_mt", "transport_consumption_mt"])
 report("FIGARO balance, peers", bal, ["country", "year"])
+print("Balance as % of production, latest two years, with and without H50 + H51:")
+print(bal[bal["year"] >= bal["year"].max() - 1].pivot(
+    index="country", columns="year",
+    values=["balance_pct_of_production", "balance_excl_transport_pct"]).round(1).to_string())
 bal.round(3).to_csv(OUT / "figaro_balance_peers.csv", index=False)
 
 ie = fig[fig["c_orig"] == "IE"]

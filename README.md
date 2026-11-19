@@ -22,12 +22,18 @@ comparisons change once emissions embodied in imports are counted.
 | Greenhouse gas emissions by source sector (`env_air_gge`) | [Eurostat](https://ec.europa.eu/eurostat/databrowser/product/view/env_air_gge) |
 | Air emissions accounts (`env_ac_ainah_r2`) and bridging items (`env_ac_aibrid_r2`) | [Eurostat](https://ec.europa.eu/eurostat/databrowser/product/view/env_ac_aibrid_r2) |
 
-The FIGARO file is too large for GitHub. Download the full dataset in JSON-stat format from
-the Eurostat API and save it as `data/raw/eurostat_env_ac_ghgfp.json`:
+The FIGARO file (about 307 MB) is too large for GitHub. Download the full dataset in
+JSON-stat format from the Eurostat API and save it as `data/raw/eurostat_env_ac_ghgfp.json`.
+Eurostat sometimes answers a large request with error 413 ("asynchronous response") and
+prepares the file in the background, so the command retries every minute until it arrives:
 
 ```
-curl -o data/raw/eurostat_env_ac_ghgfp.json "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_ac_ghgfp"
+curl --fail --retry 20 --retry-delay 60 --retry-all-errors -o data/raw/eurostat_env_ac_ghgfp.json "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_ac_ghgfp"
 ```
+
+We use the release of 30 October 2026 (2010-2024), downloaded on 18 November 2026. The
+earlier release (2010-2023, downloaded 28 September 2026) gave different consumption
+figures, so check the `updated` field in the file if your numbers don't match ours.
 
 ## Running
 

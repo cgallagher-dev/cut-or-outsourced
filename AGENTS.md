@@ -32,8 +32,8 @@ The course brief is not in the repo (it's the lecturer's material, so it stays o
 2. If it's there, read the parts that apply to the deliverable you're working on, not just
    the summary. Use the documents for different things:
    - Document 3 is the checklist. It lists the required content and suggested length for
-     each of the seven submissions. Every required item should appear in the deliverable,
-     under a heading that makes it easy for the marker to find.
+     each of the ten submissions and the oral defence. Every required item should appear
+     in the deliverable, under a heading that makes it easy for the marker to find.
    - Document 1 explains what good work looks like at each step (e.g. what a data audit
      should investigate, what to keep for data provenance, what the oral defence covers)
      and has the suggested timeline. Use it to judge quality, not just completeness.
@@ -89,7 +89,7 @@ Due dates are on each GitHub issue.
 - Don't commit, push, merge or open PRs unless the person you're helping asks. Ask before
   anything public or hard to undo.
 - Not in the repo (`.gitignore`): course instructions, the AI Decision Log (until the end),
-  the 243 MB FIGARO file, `.venv/`.
+  personal work guides (`guides/`), the 307 MB FIGARO file, `.venv/`.
 - Agreed changes to questions, data or design go in one line in the Discord #decisions
   channel.
 
@@ -158,13 +158,20 @@ This has caught several mistakes already, so keep doing it.
 - The three sources use different accounting rules. Never add them together or treat one
   as a correction of another. Compare side by side and explain the difference.
   - Our World in Data: CO2 only, 1990-2023, territorial and consumption-based.
-  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2023. Production side uses
-    the residence principle (includes Irish airlines flying abroad) and excludes households'
-    own emissions (heating, private cars).
+  - Eurostat FIGARO footprints (`env_ac_ghgfp`): all gases, 2010-2024 (release of 30 Oct
+    2026). Production side uses the residence principle (includes Irish airlines flying
+    abroad) and excludes households' own emissions (heating, private cars).
   - EPA inventory (`env_air_gge`): all gases, territory principle, the basis of the 51%
     target (vs 2018).
 - In FIGARO, drop the `EU27_2020`, `EXT_EU27_2020` and `WORLD` aggregates before summing.
   For industries, use the one-letter NACE sections (A-U); other codes overlap.
+- Use the 30 Oct 2026 FIGARO release. It revised the consumption side: Ireland's 2023
+  balance moved from +2.6% to +6.8%. Ireland's balance is small next to that revision, so
+  don't present its sign as settled.
+- Shipping (H50) and airlines (H51) are counted where the operator is resident. Denmark's
+  FIGARO production is 61% shipping and airlines (49.1 of 80.4 Mt in 2024), so whenever a
+  FIGARO balance is shown, also show it without H50 and H51
+  (`balance_excl_transport_pct`).
 - Ireland's 2019-20 footprint spike comes from intellectual property investment
   (`notebooks/investment_spike.py`). Keep the values, annotate them, don't draw trends
   through those years, and don't state why IP investment surged as fact.
