@@ -108,6 +108,10 @@ for i, country in enumerate(order):
                  color=BLUE if country == "Ireland" else TEXT)
     ax.set_xticks([1990, 2005, 2020])
     ax.set_xlim(1990, 2023)
+    if country == "Netherlands":
+        # The 1999-2003 dip is all in OWID's modelled trade term, so say so before anyone asks
+        ax.text(1992, 190, "Dip is in OWID's\ntrade estimate,\ncause not checked", va="top",
+                fontsize=TEXT_PT, color=AXIS)
     if i % 4:
         ax.tick_params(labelleft=False)
     else:
@@ -261,6 +265,9 @@ for i, r in enumerate(f4.itertuples()):
             fontweight="bold" if r.kind == "total" else "normal")
     if i < len(f4) - 1:
         ax.plot([i + 0.31, i + 0.69], [level, level], color=AXIS, linewidth=0.8)
+# 53.75 is the bridging table's inventory figure, not the EPA total, so the table's
+# "EPA inventory" label is replaced until figure_tables.py is updated (review on #23)
+f4["label"] = f4["label"].where(f4["step"] != 1, "Inventory (territory principle)")
 air = f4.loc[f4["step"] == 2, "of_which_air_mt"].iloc[0]
 ax.annotate(f"of which\nIrish-resident\nairlines {air:.2f}", (1, f4.loc[0, "value_mt"]),
             xytext=(1, f4.loc[0, "value_mt"] - 12), ha="center", va="top", fontsize=TEXT_PT,
