@@ -12,6 +12,8 @@ comparisons change once emissions embodied in imports are counted.
 - `notebooks/` - data exploration and audit scripts
 - `data/raw/` - downloaded source data
 - `data/processed/` - prepared datasets written by `notebooks/data_audit.py`
+- `data/processed/figures/` - one prepared table per figure, written by `notebooks/figure_tables.py`
+- `figures/` - the figures as PNG and SVG, written by `notebooks/figures.py`
 
 ## Data sources
 
@@ -42,6 +44,32 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python notebooks/data_audit.py
+python notebooks/figure_tables.py
+python notebooks/figures.py
 ```
 
-Scripts are run from the repository root.
+Scripts are run from the repository root. On Windows, activate the environment with
+`.venv\Scripts\Activate.ps1` instead of `source .venv/bin/activate`.
+
+## Figures
+
+`notebooks/figures.py` draws four figures from the tables in `data/processed/figures/` and
+saves each as PNG (200 dpi) and SVG in `figures/`. It does no data preparation of its own.
+
+| File | Shows | Data |
+|---|---|---|
+| `fig1_long_term_cuts` | Territorial and consumption-based CO2 for the seven countries, index 1990 = 100, 1990-2023 | Our World in Data |
+| `fig2_footprint_balance` | Consumption minus production as % of production: 2024 with and without shipping and airlines, and 2010-2024 | FIGARO |
+| `fig3_irish_industries` | Emissions produced by Irish industries in 2024, consumed in Ireland or abroad | FIGARO |
+| `fig4_why_numbers_differ` | Ireland 2024, from the territorial inventory to FIGARO production | Eurostat bridging tables |
+
+- Sizes, fonts, colours and the draft titles are set once at the top of the script. The
+  slides use 13.33 x 7.5 in; the A4 report versions change those values, not the code.
+- Text is set in DejaVu Sans, which ships with matplotlib, so the files are the same on
+  every machine.
+- The script stops if any text runs off the edge of a figure, if Figure 3's bars don't add
+  up to Ireland's FIGARO total, or if a total in Figure 4 doesn't equal the steps before it.
+- Figure 4's first bar is labelled "Inventory (territory principle)" in the script, because
+  53.75 Mt is the bridging table's inventory figure rather than the `env_air_gge` total.
+- Denmark's share of shipping and airlines in Figure 2 is read from
+  `data/processed/figaro_balance_peers.csv`, the one value not in the figure tables.
