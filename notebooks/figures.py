@@ -59,6 +59,8 @@ plt.rcParams.update({
     "figure.facecolor": "white",
     "axes.facecolor": "white",
     "svg.fonttype": "none",
+    # Fixed IDs, so rebuilding unchanged figures gives identical SVGs
+    "svg.hashsalt": "cut-or-outsourced",
 })
 
 
@@ -81,7 +83,9 @@ def save(fig, name):
                     and box.y0 >= edge.y0 - 1 and box.y1 <= edge.y1 + 1), \
                 f"{name}: text runs off the edge: {t.get_text()[:50]!r}"
     for ext in ("png", "svg"):
-        fig.savefig(OUT / f"{name}.{ext}", dpi=DPI)
+        # No timestamp in the SVG, for the same reason
+        fig.savefig(OUT / f"{name}.{ext}", dpi=DPI,
+                    metadata={"Date": None} if ext == "svg" else None)
     plt.close(fig)
     print("Saved", name)
 
@@ -106,7 +110,8 @@ for i, country in enumerate(order):
     ax.set_title(country, fontsize=TEXT_PT, loc="left",
                  fontweight="bold" if country == "Ireland" else "normal",
                  color=BLUE if country == "Ireland" else TEXT)
-    ax.set_xticks([1990, 2005, 2020])
+    # Ticks kept inside the range, so neighbouring panels' labels don't meet at the edges
+    ax.set_xticks([1995, 2005, 2015])
     ax.set_xlim(1990, 2023)
     if country == "Netherlands":
         # The 1999-2003 dip is all in OWID's modelled trade term, so say so before anyone asks
@@ -200,7 +205,7 @@ for y, name, is_ie in ends:
     ax_b.text(2024.4, y, name, va="center", fontsize=TEXT_PT,
               color=BLUE if is_ie else AXIS, fontweight="bold" if is_ie else "normal")
 ax_b.set_xlim(2010, 2024)
-ax_b.set_xticks([2010, 2014, 2018, 2022, 2024])
+ax_b.set_xticks([2010, 2014, 2018, 2022])
 ax_b.set_ylabel("% of production")
 ax_b.set_title("B. All industries, 2010–2024", loc="left", fontsize=TEXT_PT,
                fontweight="bold", pad=30)
@@ -265,9 +270,6 @@ for i, r in enumerate(f4.itertuples()):
             fontweight="bold" if r.kind == "total" else "normal")
     if i < len(f4) - 1:
         ax.plot([i + 0.31, i + 0.69], [level, level], color=AXIS, linewidth=0.8)
-# 53.75 is the bridging table's inventory figure, not the EPA total, so the table's
-# "EPA inventory" label is replaced until figure_tables.py is updated (review on #23)
-f4["label"] = f4["label"].where(f4["step"] != 1, "Inventory (territory principle)")
 air = f4.loc[f4["step"] == 2, "of_which_air_mt"].iloc[0]
 ax.annotate(f"of which\nIrish-resident\nairlines {air:.2f}", (1, f4.loc[0, "value_mt"]),
             xytext=(1, f4.loc[0, "value_mt"] - 12), ha="center", va="top", fontsize=TEXT_PT,
