@@ -82,4 +82,22 @@ f4["running_total_mt"] = running
 print(f4.round(2).to_string(index=False))
 f4.round(3).to_csv(OUT / "fig4_ie_bridge.csv", index=False)
 
+print("\n== Figure 5. Consumption footprint per person by final use, 2023 (FIGARO, OWID population)")
+pp = pd.read_csv(PROC / "figaro_footprint_per_person.csv")
+# OWID population stops at 2023, so that is the latest year with a per-person value
+f5 = pp[pp["year"] == pp["year"].max()].copy()
+f5["country_name"] = f5["country"].map(NAMES)
+f5 = f5.rename(columns={"households_gov_t_per_person": "households_gov_t",
+                        "investment_t_per_person": "investment_t",
+                        "inventories_t_per_person": "inventories_t",
+                        "total_t_per_person": "total_t"})
+# Inventories are small and can be negative, so the parts are checked against the total
+assert (f5[["households_gov_t", "investment_t", "inventories_t"]].sum(axis=1)
+        - f5["total_t"]).abs().max() < 0.01
+f5["sort_order"] = f5["total_t"].rank(ascending=False).astype(int)
+f5 = f5[["country", "country_name", "year", "households_gov_t", "investment_t",
+         "inventories_t", "total_t", "sort_order"]].sort_values("sort_order")
+print(f5.round(2).to_string(index=False))
+f5.round(3).to_csv(OUT / "fig5_per_person.csv", index=False)
+
 print("\nSaved:", sorted(p.name for p in OUT.glob("*.csv")))

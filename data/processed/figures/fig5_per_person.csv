@@ -1,0 +1,8 @@
+country,country_name,year,households_gov_t,investment_t,inventories_t,total_t,sort_order
+IE,Ireland,2023,6.548,5.419,0.762,12.729,1
+UK,United Kingdom,2023,7.36,1.501,-0.232,8.628,2
+DE,Germany,2023,6.187,2.173,0.164,8.525,3
+NL,Netherlands,2023,6.1,2.254,-0.162,8.192,4
+DK,Denmark,2023,5.324,2.555,0.08,7.959,5
+FR,France,2023,5.295,1.539,0.082,6.916,6
+SE,Sweden,2023,4.172,2.184,-0.061,6.296,7
