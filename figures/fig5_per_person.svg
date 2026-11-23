@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="959.76pt" height="540pt" viewBox="0 0 959.76 540" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 540 
+L 959.76 540 
+L 959.76 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 153.5616 432 
+L 863.784 432 
+L 863.784 118.8 
+L 153.5616 118.8 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 153.5616 133.036364 
+L 471.256987 133.036364 
+L 471.256987 159.702664 
+L 153.5616 159.702664 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 153.5616 176.046526 
+L 510.653544 176.046526 
+L 510.653544 202.712826 
+L 153.5616 202.712826 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 153.5616 219.056688 
+L 453.742016 219.056688 
+L 453.742016 245.722988 
+L 153.5616 245.722988 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 153.5616 262.06685 
+L 449.520956 262.06685 
+L 449.520956 288.73315 
+L 153.5616 288.73315 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 153.5616 305.077012 
+L 411.871045 305.077012 
+L 411.871045 331.743312 
+L 153.5616 331.743312 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 153.5616 348.087174 
+L 410.464025 348.087174 
+L 410.464025 374.753474 
+L 153.5616 374.753474 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 153.5616 391.097336 
+L 355.978392 391.097336 
+L 355.978392 417.763636 
+L 153.5616 417.763636 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #2a78d6; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 471.256987 133.036364 
+L 734.175635 133.036364 
+L 734.175635 159.702664 
+L 471.256987 159.702664 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 510.653544 176.046526 
+L 583.478953 176.046526 
+L 583.478953 202.712826 
+L 510.653544 202.712826 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 453.742016 219.056688 
+L 559.171472 219.056688 
+L 559.171472 245.722988 
+L 453.742016 245.722988 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 449.520956 262.06685 
+L 558.880364 262.06685 
+L 558.880364 288.73315 
+L 449.520956 288.73315 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 411.871045 305.077012 
+L 535.834349 305.077012 
+L 535.834349 331.743312 
+L 411.871045 331.743312 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 410.464025 348.087174 
+L 485.133115 348.087174 
+L 485.133115 374.753474 
+L 410.464025 374.753474 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 355.978392 391.097336 
+L 461.941545 391.097336 
+L 461.941545 417.763636 
+L 355.978392 417.763636 
+z
+" clip-path="url(#p85f367f58b)" style="fill: #eb6834; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 153.5616 432 
+L 153.5616 118.8 
+" clip-path="url(#p85f367f58b)" style="fill: none; stroke: #e1e0d9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m285b8a8001" d="M 0 0 
+L 0 3.5 
+" style="stroke: #52514e; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m285b8a8001" x="153.5616" y="432" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52514e" x="153.5616" y="449.636719" transform="rotate(-0 153.5616 449.636719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 347.633309 432 
+L 347.633309 118.8 
+" clip-path="url(#p85f367f58b)" style="fill: none; stroke: #e1e0d9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m285b8a8001" x="347.633309" y="432" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52514e" x="347.633309" y="449.636719" transform="rotate(-0 347.633309 449.636719)">4</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 541.705018 432 
+L 541.705018 118.8 
+" clip-path="url(#p85f367f58b)" style="fill: none; stroke: #e1e0d9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m285b8a8001" x="541.705018" y="432" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52514e" x="541.705018" y="449.636719" transform="rotate(-0 541.705018 449.636719)">8</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 735.776727 432 
+L 735.776727 118.8 
+" clip-path="url(#p85f367f58b)" style="fill: none; stroke: #e1e0d9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m285b8a8001" x="735.776727" y="432" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52514e" x="735.776727" y="449.636719" transform="rotate(-0 735.776727 449.636719)">12</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52514e" x="508.6728" y="467.636719" transform="rotate(-0 508.6728 467.636719)">t CO₂e per person</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9">
+      <defs>
+       <path id="m01b4a737ba" d="M 0 0 
+L -3.5 0 
+" style="stroke: #52514e; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="146.369514" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #2a78d6" x="146.5616" y="151.68842" transform="rotate(-0 146.5616 151.68842)">Ireland</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="189.379676" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="194.698582" transform="rotate(-0 146.5616 194.698582)">United Kingdom</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="232.389838" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="237.708197" transform="rotate(-0 146.5616 237.708197)">Germany</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="275.4" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="280.718906" transform="rotate(-0 146.5616 280.718906)">Netherlands</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="318.410162" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="323.729068" transform="rotate(-0 146.5616 323.729068)">Denmark</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="361.420324" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="366.738683" transform="rotate(-0 146.5616 366.738683)">France</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m01b4a737ba" x="153.5616" y="404.430486" style="fill: #52514e; stroke: #52514e; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52514e" x="146.5616" y="409.749392" transform="rotate(-0 146.5616 409.749392)">Sweden</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_17">
+    <path d="M 153.5616 432 
+L 153.5616 118.8 
+" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 153.5616 432 
+L 863.784 432 
+" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="741.453324" y="150.006233" transform="rotate(-0 741.453324 150.006233)">12.7 t</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="590.756642" y="193.016395" transform="rotate(-0 590.756642 193.016395)">8.6 t</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="566.449161" y="236.026557" transform="rotate(-0 566.449161 236.026557)">8.5 t</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="566.158053" y="279.036719" transform="rotate(-0 566.158053 279.036719)">8.2 t</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="543.112038" y="322.046881" transform="rotate(-0 543.112038 322.046881)">8.0 t</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="492.410804" y="365.057043" transform="rotate(-0 492.410804 365.057043)">6.9 t</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="469.219235" y="408.067205" transform="rotate(-0 469.219235 408.067205)">6.3 t</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_19">
+     <path d="M 166.1616 102.836719 
+L 194.1616 102.836719 
+L 194.1616 93.036719 
+L 166.1616 93.036719 
+z
+" style="fill: #2a78d6; stroke: #2a78d6; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="205.3616" y="102.836719" transform="rotate(-0 205.3616 102.836719)">Households and government</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 435.333475 102.836719 
+L 463.333475 102.836719 
+L 463.333475 93.036719 
+L 435.333475 93.036719 
+z
+" style="fill: #eb6834; stroke: #eb6834; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="474.533475" y="102.836719" transform="rotate(-0 474.533475 102.836719)">Investment</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0b0b0b" x="19.1952" y="34.096875" transform="rotate(-0 19.1952 34.096875)">Ireland has the highest footprint per person, but its lead is mostly investment</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52514e" x="19.1952" y="62.697656" transform="rotate(-0 19.1952 62.697656)">Consumption footprint per person by final use, 2023, t CO₂e</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52514e" x="19.1952" y="529.2" transform="rotate(-0 19.1952 529.2)">Source: Eurostat, greenhouse gas footprints, FIGARO (env_ac_ghgfp), release of 30 October 2026. All greenhouse gases. Population: Our World in Data.</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52514e" x="19.1952" y="504.9" transform="rotate(-0 19.1952 504.9)">Totals include changes in inventories (-0.2 to +0.8 t), not drawn. FIGARO leaves out households' own heating and cars for every country.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p85f367f58b">
+   <rect x="153.5616" y="118.8" width="710.2224" height="313.2"/>
+  </clipPath>
+ </defs>
+</svg>
