@@ -27,6 +27,7 @@ TITLES = {
     "fig2": "Without shipping and airlines, all seven countries are net importers of emissions",
     "fig3": "Most emissions from Irish farming and airlines are consumed abroad",
     "fig4": "The inventory and FIGARO totals differ for known reasons",
+    "fig5": "Ireland has the highest footprint per person, but its lead is mostly investment",
 }
 
 BLUE = "#2a78d6"
@@ -283,3 +284,60 @@ ax.legend(handles=[Patch(color=TOTAL, label="Total"), Patch(color=ORANGE, label=
                    Patch(color=BLUE, label="Taken away")],
           loc="upper left", frameon=False, fontsize=TEXT_PT, ncol=3)
 save(fig, "fig4_why_numbers_differ")
+
+# Figure 5. Consumption footprint per person by final use, 2023
+f5 = pd.read_csv(DATA / "fig5_per_person.csv").sort_values("sort_order")
+# Inventories are small and can be negative, so they stay in the total but aren't drawn
+assert (f5[["households_gov_t", "investment_t", "inventories_t"]].sum(axis=1)
+        - f5["total_t"]).abs().max() < 0.01
+FIG5_NOTE = (f"Totals include changes in inventories ({f5['inventories_t'].min():+.1f} to "
+             f"{f5['inventories_t'].max():+.1f} t), not drawn. FIGARO leaves out households' own "
+             "heating and cars for every country.")
+
+
+def fig5_bars(ax, fontsize):
+    ys = range(len(f5))
+    ax.barh(ys, f5["households_gov_t"], color=BLUE, edgecolor="white", linewidth=2, height=0.62)
+    ax.barh(ys, f5["investment_t"], left=f5["households_gov_t"], color=ORANGE,
+            edgecolor="white", linewidth=2, height=0.62)
+    for y, r in zip(ys, f5.itertuples()):
+        ax.text(r.households_gov_t + r.investment_t + 0.15, y, f"{r.total_t:.1f} t", va="center",
+                fontsize=fontsize, fontweight="bold" if r.country == "IE" else "normal")
+    ax.set_yticks(list(ys), f5["country_name"], fontsize=fontsize)
+    for label, code in zip(ax.get_yticklabels(), f5["country"]):
+        if code == "IE":
+            label.set_color(BLUE)
+            label.set_fontweight("bold")
+    ax.invert_yaxis()
+    ax.grid(False)
+    ax.grid(axis="x")
+    ax.tick_params(axis="x", labelsize=fontsize)
+    ax.set_xlim(0, f5["total_t"].max() * 1.15)
+    ax.set_xticks([0, 4, 8, 12])
+    return [Patch(color=BLUE, label="Households and government"),
+            Patch(color=ORANGE, label="Investment")]
+
+
+# Report and full-slide version, same frame as the other figures
+fig = frame("fig5", "Consumption footprint per person by final use, 2023, t CO₂e",
+            FIGARO_SOURCE + " Population: Our World in Data.")
+ax = fig.add_axes([0.16, 0.2, 0.74, 0.58])
+handles = fig5_bars(ax, TEXT_PT)
+ax.set_xlabel("t CO₂e per person")
+ax.legend(handles=handles, loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, frameon=False,
+          fontsize=TEXT_PT)
+fig.text(0.02, 0.065, FIG5_NOTE, fontsize=SOURCE_PT, color=AXIS)
+save(fig, "fig5_per_person")
+
+# Panel version for the limitations slide, sized to sit in two card slots
+PANEL_SIZE, PANEL_PT = (7.96, 2.6), 10
+fig = plt.figure(figsize=PANEL_SIZE, dpi=DPI)
+fig.text(0.01, 0.97, "Per person, 2023: Ireland is highest, but 5.4 of its 12.7 t is investment",
+         fontsize=PANEL_PT + 2, fontweight="bold", va="top")
+ax = fig.add_axes([0.17, 0.2, 0.8, 0.62])
+handles = fig5_bars(ax, PANEL_PT)
+ax.legend(handles=handles, loc="lower right", bbox_to_anchor=(1.0, 0.02), frameon=False,
+          fontsize=PANEL_PT - 1)
+fig.text(0.01, 0.02, "t CO₂e per person. Source: Eurostat FIGARO (30 Oct 2026 release), "
+         "OWID population. Inventories in totals, not drawn.", fontsize=PANEL_PT - 2, color=AXIS)
+save(fig, "fig5_per_person_panel")
