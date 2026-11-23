@@ -60,7 +60,8 @@ f3.round(3).to_csv(OUT / "fig3_ie_industries.csv", index=False)
 print(f"\n== Figure 4. From the inventory to FIGARO production, Ireland {YEAR} (bridging table)")
 r = pd.read_csv(PROC / "ie_reconciliation.csv").set_index("time").loc[YEAR]
 f4 = pd.DataFrame([
-    ("EPA inventory (inside Ireland)", r["inventory_territory"], "total"),
+    # The bridging table's own inventory figure, slightly below the env_air_gge total
+    ("Inventory (territory principle)", r["inventory_territory"], "total"),
     ("Fuel Irish residents bought abroad", r["plus_residents_fuel_abroad"], "add"),
     ("Fuel non-residents bought in Ireland", abs(r["minus_nonresidents_in_ie"]), "subtract"),
     ("All Irish residents", r["aea_residents_total"], "total"),
