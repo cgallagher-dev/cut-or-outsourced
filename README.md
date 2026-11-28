@@ -53,8 +53,11 @@ Scripts are run from the repository root. On Windows, activate the environment w
 
 ## Figures
 
-`notebooks/figures.py` draws four figures from the tables in `data/processed/figures/` and
-saves each as PNG (200 dpi) and SVG in `figures/`. It does no data preparation of its own.
+`notebooks/figures.py` draws five figures, plus a smaller panel of Figure 5 for the slides,
+from the tables in `data/processed/figures/` and saves each as PNG (200 dpi) and SVG in
+`figures/`. It does no data preparation of its own. The same files are used in the slides
+and in the A4 landscape report, `deliverables/Cut or Outsourced (Final Visualisation
+Package).docx`.
 
 | File | Shows | Data |
 |---|---|---|
@@ -62,9 +65,11 @@ saves each as PNG (200 dpi) and SVG in `figures/`. It does no data preparation o
 | `fig2_footprint_balance` | Consumption minus production as % of production: 2024 with and without shipping and airlines, and 2010-2024 | FIGARO |
 | `fig3_irish_industries` | Emissions produced by Irish industries in 2024, consumed in Ireland or abroad | FIGARO |
 | `fig4_why_numbers_differ` | Ireland 2024, from the territorial inventory to FIGARO production | Eurostat bridging tables |
+| `fig5_per_person` | Consumption footprint per person in 2023, split into households and government, and investment | FIGARO, Our World in Data population |
+| `fig5_per_person_panel` | The same as Figure 5, sized for the limitations slide | FIGARO, Our World in Data population |
 
-- Sizes, fonts, colours and the draft titles are set once at the top of the script. The
-  slides use 13.33 x 7.5 in; the A4 report versions change those values, not the code.
+- Sizes, fonts, colours and the titles are set once at the top of the script. Figures are
+  13.33 x 7.5 in, which fits a slide and the width of an A4 landscape page.
 - Text is set in DejaVu Sans, which ships with matplotlib, so the files are the same on
   every machine.
 - The script stops if any text runs off the edge of a figure, if Figure 3's bars don't add
